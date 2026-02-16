@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oldapp-blue
+  labels: 
+    app: my-app
+    env: blue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+      env: blue
+  template:
+    metadata:
+      labels:
+        app: my-app
+        env: blue
+    spec:
+      containers:
+      - name: cont-1
+        image: gstejadocker/mytetrisgame:v1
+        ports:
+        - containerPort: 3000
