@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: my-app
+    env: green
   ports:
     - port: 3000
       targetPort: 3000
